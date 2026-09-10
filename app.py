@@ -68,15 +68,20 @@ if st.button("🚀 Executar Programa"):
                 "Valor": token[1]
             })
 
+        df = pd.DataFrame(dados)
+
         st.dataframe(
-            pd.DataFrame(dados),
-            use_container_width=True
+            df,
+            use_container_width=True,
+            hide_index=True
         )
 
         parser = Parser(tokens)
         parser.programa()
 
-        st.success("✅ Programa sintaticamente válido!")
+        st.success(
+            "✅ Análise Sintática Concluída: Programa Válido"
+        )
 
         st.divider()
 
