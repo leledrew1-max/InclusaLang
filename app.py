@@ -20,16 +20,6 @@ pagina = st.sidebar.radio(
     ]
 )
 
-teste = st.sidebar.selectbox(
-    "🧪 Casos de Teste",
-    [
-        "Manual",
-        "✅ Programa Válido",
-        "❌ Erro Sintático",
-        "🔍 Consulta Não Encontrada"
-    ]
-)
-
 # BNF
 
 if pagina == "📋 BNF":
@@ -121,6 +111,29 @@ Projeto desenvolvido para a disciplina de **Linguagens Formais e Compiladores**.
 
     st.stop()
 
+# DEMONSTRAÇÃO
+
+st.title("🎓 InclusaLang")
+
+st.markdown("""
+### Linguagem Formal para Inclusão e Acessibilidade
+
+Projeto desenvolvido para a disciplina de **Linguagens Formais e Compiladores**.
+
+ODS 10 • Redução das Desigualdades
+""")
+
+st.subheader("🧪 Casos de Teste")
+
+teste = st.selectbox(
+    "Escolha um cenário para demonstração:",
+    [
+        "✅ Programa Válido",
+        "❌ Erro Sintático",
+        "🔍 Consulta Não Encontrada"
+    ]
+)
+
 # CASOS DE TESTE
 
 if teste == "✅ Programa Válido":
@@ -147,27 +160,6 @@ elif teste == "🔍 Consulta Não Encontrada":
 CONSULTAR(LEITOR_TELA);
 
 FIM"""
-
-else:
-
-    codigo_padrao = """INICIO
-
-SOLICITAR(RAMPA);
-CONSULTAR(RAMPA);
-
-FIM"""
-
-# DEMONSTRAÇÃO
-
-st.title("🎓 InclusaLang")
-
-st.markdown("""
-### Linguagem Formal para Inclusão e Acessibilidade
-
-Projeto desenvolvido para a disciplina de **Linguagens Formais e Compiladores**.
-
-ODS 10 • Redução das Desigualdades
-""")
 
 st.divider()
 
