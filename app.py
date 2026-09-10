@@ -186,4 +186,3 @@ st.divider()
 st.caption(
     "InclusaLang • Linguagens Formais e Compiladores • UNIG"
 )
-``
