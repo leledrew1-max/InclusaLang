@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 from scanner import scanner
 from parser import Parser
@@ -59,8 +60,18 @@ if st.button("🚀 Executar Programa"):
 
         st.subheader("📋 Tokens Encontrados")
 
+        dados = []
+
         for token in tokens:
-            st.write(token)
+            dados.append({
+                "Tipo": token[0],
+                "Valor": token[1]
+            })
+
+        st.dataframe(
+            pd.DataFrame(dados),
+            use_container_width=True
+        )
 
         parser = Parser(tokens)
         parser.programa()
