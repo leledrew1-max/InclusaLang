@@ -5,21 +5,113 @@ from scanner import scanner
 from parser import Parser
 from interpretador import Interpretador
 
-# SIDEBAR
+# MENU LATERAL
 
 st.sidebar.title("🎓 InclusaLang")
 
-st.sidebar.info("""
-Alessandra Brito Araújo
+pagina = st.sidebar.radio(
+    "Navegação",
+    [
+        "🏠 Demonstração",
+        "📋 BNF",
+        "📋 EBNF",
+        "🎯 ODS",
+        "👩‍💻 Sobre"
+    ]
+)
 
-Ciência da Computação - UNIG
+# BNF
 
-Trabalho Final
+if pagina == "📋 BNF":
 
-ODS 10 - Redução das Desigualdades
+    st.title("📋 Gramática BNF")
+
+    st.code("""
+<programa> ::= INICIO <lista_comandos> FIM
+
+<lista_comandos> ::= <comando>
+                   | <comando> <lista_comandos>
+
+<comando> ::= SOLICITAR(<id>);
+            | CONSULTAR(<id>);
+            | INSCREVER(<id>);
+
+<id> ::= ID
 """)
 
-# CABEÇALHO
+    st.stop()
+
+# EBNF
+
+if pagina == "📋 EBNF":
+
+    st.title("📋 Gramática EBNF")
+
+    st.code("""
+programa = "INICIO", lista_comandos, "FIM";
+
+lista_comandos = { comando };
+
+comando =
+    "SOLICITAR", "(", id, ")", ";"
+  | "CONSULTAR", "(", id, ")", ";"
+  | "INSCREVER", "(", id, ")", ";";
+
+id = ID;
+""")
+
+    st.stop()
+
+# ODS
+
+if pagina == "🎯 ODS":
+
+    st.title("🎯 Objetivos de Desenvolvimento Sustentável")
+
+    st.markdown("""
+### ODS 10 – Redução das Desigualdades
+
+- Meta 10.2: promover a inclusão social.
+- Meta 10.3: garantir igualdade de oportunidades.
+
+### ODS 4 – Educação de Qualidade
+
+- Meta 4.5: eliminar disparidades de acesso à educação.
+- Meta 4.a: promover ambientes educacionais inclusivos.
+""")
+
+    st.stop()
+
+# SOBRE
+
+if pagina == "👩‍💻 Sobre":
+
+    st.title("👩‍💻 Sobre o Projeto")
+
+    st.markdown("""
+### InclusaLang
+
+Projeto desenvolvido para a disciplina de **Linguagens Formais e Compiladores**.
+
+**Universidade:** UNIG
+
+**Curso:** Ciência da Computação
+
+**Autora:** Alessandra Brito Araújo
+
+### Tecnologias Utilizadas
+
+- Python
+- Streamlit
+- GitHub
+- Scanner Léxico
+- Parser Descendente Recursivo
+- Interpretador
+""")
+
+    st.stop()
+
+# DEMONSTRAÇÃO
 
 st.title("🎓 InclusaLang")
 
@@ -33,8 +125,6 @@ ODS 10 • Redução das Desigualdades
 
 st.divider()
 
-# ENTRADA
-
 st.subheader("📝 Programa de Entrada")
 
 codigo = st.text_area(
@@ -47,8 +137,6 @@ CONSULTAR(RAMPA);
 FIM""",
     height=250
 )
-
-# BOTÃO
 
 if st.button("🚀 Executar Programa"):
 
@@ -93,10 +181,9 @@ if st.button("🚀 Executar Programa"):
     except Exception as erro:
         st.error(f"❌ Erro: {erro}")
 
-# RODAPÉ
-
 st.divider()
 
 st.caption(
     "InclusaLang • Linguagens Formais e Compiladores • UNIG"
 )
+``
