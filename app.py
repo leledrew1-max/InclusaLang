@@ -1,11 +1,40 @@
 import streamlit as st
+
 from scanner import scanner
 from parser import Parser
 from interpretador import Interpretador
 
-st.title("InclusaLang")
+# SIDEBAR
 
-st.write("Linguagem para Inclusão e Acessibilidade")
+st.sidebar.title("🎓 InclusaLang")
+
+st.sidebar.info("""
+Alessandra Brito Araújo
+
+Ciência da Computação - UNIG
+
+Trabalho Final
+
+ODS 10 - Redução das Desigualdades
+""")
+
+# CABEÇALHO
+
+st.title("🎓 InclusaLang")
+
+st.markdown("""
+### Linguagem Formal para Inclusão e Acessibilidade
+
+Projeto desenvolvido para a disciplina de **Linguagens Formais e Compiladores**.
+
+ODS 10 • Redução das Desigualdades
+""")
+
+st.divider()
+
+# ENTRADA
+
+st.subheader("📝 Programa de Entrada")
 
 codigo = st.text_area(
     "Digite seu programa:",
@@ -14,16 +43,21 @@ codigo = st.text_area(
 SOLICITAR(RAMPA);
 CONSULTAR(RAMPA);
 
-FIM"""
+FIM""",
+    height=250
 )
 
-if st.button("Executar"):
+# BOTÃO
+
+if st.button("🚀 Executar Programa"):
 
     try:
 
         tokens = scanner(codigo)
 
-        st.subheader("Tokens Encontrados")
+        st.divider()
+
+        st.subheader("📋 Tokens Encontrados")
 
         for token in tokens:
             st.write(token)
@@ -31,12 +65,22 @@ if st.button("Executar"):
         parser = Parser(tokens)
         parser.programa()
 
-        st.success("Programa sintaticamente válido!")
+        st.success("✅ Programa sintaticamente válido!")
 
-        st.subheader("Execução")
+        st.divider()
+
+        st.subheader("⚙️ Resultado da Execução")
 
         interpretador = Interpretador()
         interpretador.executar(tokens)
 
     except Exception as erro:
-        st.error(f"Erro: {erro}")
+        st.error(f"❌ Erro: {erro}")
+
+# RODAPÉ
+
+st.divider()
+
+st.caption(
+    "InclusaLang • Linguagens Formais e Compiladores • UNIG"
+)
