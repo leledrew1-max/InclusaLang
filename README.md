@@ -23,6 +23,7 @@ A aplicação foi publicada utilizando Streamlit Community Cloud.
 - Interpretador
 - Interface Web com Streamlit
 - Casos de Teste Interativos
+- Aplicação Prática Simulada
 - Demonstração Online
 
 ---
@@ -116,6 +117,22 @@ A interface web permite:
 
 ---
 
+## Aplicação Prática Simulada
+
+A aplicação disponibiliza uma seção de simulação de uso real, demonstrando como a InclusaLang poderia ser utilizada futuramente para registrar e acompanhar solicitações de acessibilidade.
+
+Nesta área, o usuário pode:
+
+- Informar um nome de solicitante;
+- Selecionar um recurso de acessibilidade;
+- Registrar solicitações simuladas;
+- Visualizar indicadores e gráficos demonstrativos;
+- Compreender uma possível aplicação prática da linguagem em ambientes educacionais e sociais.
+
+**Observação:** os dados apresentados possuem caráter acadêmico e ilustrativo.
+
+---
+
 ## Autora
 
 Alessandra Brito Araújo
@@ -132,4 +149,14 @@ Curso de Ciência da Computação – UNIG
 
 ## Repositório Acadêmico
 
-Projeto desenvolvido como atividade prática da disciplina de Linguagens Formais e Compiladores, contemplando a especificação de uma linguagem formal, implementação de Scanner Léxico, Parser Descendente Recursivo, Interpretador e Interface Web para demonstração dos resultados.
+Projeto desenvolvido como atividade prática da disciplina de Linguagens Formais e Compiladores, contemplando:
+
+- Especificação de uma linguagem formal;
+- Gramática BNF e EBNF;
+- Scanner Léxico;
+- Parser Descendente Recursivo;
+- Interpretador;
+- Autômato Finito Determinístico;
+- Interface Web;
+- Aplicação Prática Simulada;
+- Demonstração Online.
